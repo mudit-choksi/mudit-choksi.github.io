@@ -1,683 +1,1036 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-	<script type="text/javascript">
-		(function(c,l,a,r,i,t,y){
-			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-		})(window, document, "clarity", "script", "myjkg0qzat");
-	</script>
-    <title>Mudit Choksi Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
-
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mudit Choksi — Software Engineer</title>
+<meta name="description" content="Mudit Choksi — Software Engineer at Diversified Automation. MS CS @ Indiana University GPA 3.84. React · Node · Python · Java · ML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+/* ===== THEME TOKENS ===== */
+:root {
+  --bg:#060608; --bg2:#0d0d14; --s:#111118; --s2:#18181f;
+  --b:#1e1e2e; --b2:#252535;
+  --t:#f0f0f8; --t2:#b0b0c8; --t3:#606080;
+  --a:#c8ff00; --a2:#ff4d6d; --a3:#00d4ff;
+  --ag:rgba(200,255,0,0.08); --a2g:rgba(255,77,109,0.08);
+  --mono:'Space Mono',monospace; --disp:'Syne',sans-serif;
+  --radius:0px;
+  --shadow:0 4px 32px rgba(0,0,0,0.6);
+  --trans: background .35s ease, color .35s ease, border-color .35s ease;
+}
+[data-theme="light"] {
+  --bg:#f4f4f0; --bg2:#ebebе6; --s:#ffffff; --s2:#f8f8f4;
+  --b:#ddddd8; --b2:#cccccc;
+  --t:#0a0a10; --t2:#404050; --t3:#808090;
+  --a:#4a7c00; --a2:#cc2244; --a3:#006699;
+  --ag:rgba(74,124,0,0.08); --a2g:rgba(204,34,68,0.08);
+  --shadow:0 4px 32px rgba(0,0,0,0.12);
 }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--t);
+  font-family:var(--disp);overflow-x:hidden;cursor:none;
+  transition:var(--trans);
 }
+a{color:inherit;text-decoration:none}
 
-.about-mf .about-img img {
-  margin-left: 10px;
+/* ===== CURSOR ===== */
+#cur{position:fixed;width:10px;height:10px;background:var(--a);border-radius:50%;
+  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+  transition:width .15s,height .15s,background .35s;mix-blend-mode:difference}
+#cur.big{width:36px;height:36px;background:transparent;border:1.5px solid var(--a);mix-blend-mode:normal}
+#cur2{position:fixed;width:4px;height:4px;border:1px solid var(--a);opacity:0.35;border-radius:50%;
+  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+  transition:left .1s ease,top .1s ease,border-color .35s}
+
+/* ===== NAV ===== */
+nav{
+  position:sticky;top:0;z-index:500;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2.5rem;border-bottom:1px solid var(--b);
+  background:rgba(6,6,8,0.94);backdrop-filter:blur(20px);
+  transition:var(--trans),background .35s;
 }
+[data-theme="light"] nav{background:rgba(244,244,240,0.94)}
+.logo{font-weight:800;font-size:.95rem;letter-spacing:-.02em;
+  display:flex;align-items:center;gap:8px;cursor:none}
+.logo-dot{width:8px;height:8px;background:var(--a);border-radius:50%;
+  box-shadow:0 0 8px var(--a);transition:background .35s,box-shadow .35s}
+.nav-r{display:flex;align-items:center;gap:1.8rem}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{font-family:var(--mono);font-size:.66rem;color:var(--t3);
+  transition:color .2s;letter-spacing:.04em}
+.nav-links a:hover{color:var(--a)}
+.hire-btn{font-family:var(--mono);font-size:.66rem;background:var(--a);color:var(--bg);
+  padding:.44rem 1.2rem;font-weight:700;border:none;cursor:none;
+  letter-spacing:.06em;transition:opacity .15s,transform .15s,background .35s,color .35s}
+.hire-btn:hover{opacity:.85;transform:translateY(-1px)}
 
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
+/* THEME TOGGLE */
+.theme-toggle{
+  width:38px;height:20px;background:var(--b2);border:1px solid var(--b);
+  border-radius:10px;cursor:none;position:relative;
+  transition:background .35s,border-color .35s;flex-shrink:0;
 }
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
+.theme-toggle::after{
+  content:'';position:absolute;width:14px;height:14px;
+  background:var(--a);border-radius:50%;top:2px;left:2px;
+  transition:transform .3s,background .35s;
+  box-shadow:0 0 6px var(--a);
 }
+[data-theme="light"] .theme-toggle::after{transform:translateX(18px)}
+.theme-label{font-family:var(--mono);font-size:.58rem;color:var(--t3);letter-spacing:.05em;
+  transition:color .35s;white-space:nowrap}
 
+/* ===== TICKER ===== */
+.ticker-wrap{overflow:hidden;border-bottom:1px solid var(--b);
+  padding:.5rem 0;background:var(--s);transition:var(--trans)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker{display:flex;animation:ticker 32s linear infinite;white-space:nowrap}
+.ti{font-family:var(--mono);font-size:.64rem;color:var(--t3);padding:0 2rem;transition:color .35s}
+.ti .dot{color:var(--a);transition:color .35s}
 
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
+/* ===== HERO ===== */
+.hero{padding:3.5rem 2.5rem 2.5rem;border-bottom:1px solid var(--b);transition:var(--trans)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:3rem;align-items:center}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--mono);font-size:.65rem;color:var(--a);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.1rem;
+  display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--a)}
+h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;
+  line-height:.93;letter-spacing:-.03em;margin-bottom:1.1rem}
+.stroke{color:transparent;-webkit-text-stroke:1.5px var(--a)}
+.hero-sub{font-family:var(--mono);font-size:.71rem;color:var(--t2);
+  line-height:1.9;margin-bottom:1.6rem;max-width:390px;transition:color .35s}
+.hero-sub b{color:var(--t);font-weight:400;transition:color .35s}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.btn-a{background:var(--a);color:var(--bg);border:none;
+  padding:.68rem 1.7rem;font-family:var(--mono);font-size:.7rem;
+  font-weight:700;letter-spacing:.05em;cursor:none;
+  transition:opacity .15s,transform .15s,background .35s,color .35s}
+.btn-a:hover{opacity:.85;transform:translateY(-2px)}
+.btn-b{background:transparent;color:var(--t);border:1px solid var(--b);
+  padding:.68rem 1.7rem;font-family:var(--mono);font-size:.7rem;
+  cursor:none;display:inline-block;
+  transition:border-color .2s,color .2s,transform .15s,background .35s}
+.btn-b:hover{border-color:var(--a);color:var(--a);transform:translateY(-2px)}
+.hint{font-family:var(--mono);font-size:.62rem;color:var(--t3);
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid var(--b);padding:.3rem .9rem;transition:var(--trans)}
+.hint::before{content:'»';color:var(--a)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.blink{animation:blink 1s infinite;color:var(--a)}
 
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
+/* DESK WRAP */
+.desk-wrap{background:var(--bg2);border:1px solid var(--b);
+  position:relative;overflow:hidden;transition:var(--trans)}
+#threeCanvas{display:block;width:100%;cursor:none}
+.canvas-hud{display:flex;justify-content:space-between;align-items:center;
+  padding:.55rem 1.2rem;border-top:1px solid var(--b);
+  background:var(--s);transition:var(--trans)}
+.hud-txt{font-family:var(--mono);font-size:.6rem;color:var(--t3);transition:color .35s}
+.hud-txt em{color:var(--a);font-style:normal}
+.hud-btns{display:flex;gap:.4rem}
+.hud-btn{font-family:var(--mono);font-size:.58rem;background:transparent;
+  color:var(--t3);border:1px solid var(--b);padding:.25rem .7rem;
+  cursor:none;transition:all .2s}
+.hud-btn:hover{border-color:var(--a);color:var(--a)}
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+/* STATS */
+.stats-bar{display:flex;border-bottom:1px solid var(--b);overflow-x:auto;transition:var(--trans)}
+.stat{flex:1;min-width:90px;padding:1.2rem 1.6rem;border-right:1px solid var(--b);
+  transition:background .2s,var(--trans)}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--s)}
+.stat-n{font-family:var(--mono);font-size:1.75rem;font-weight:700;
+  color:var(--a);letter-spacing:-.02em;line-height:1;transition:color .35s}
+.stat-l{font-family:var(--mono);font-size:.58rem;color:var(--t3);
+  margin-top:5px;letter-spacing:.04em;transition:color .35s}
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
+/* SECTION */
+.section{padding:3rem 2.5rem;transition:var(--trans)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:1.8rem;flex-wrap:wrap;gap:.5rem}
+.sec-label{font-family:var(--mono);font-size:.65rem;color:var(--t3);
+  letter-spacing:.15em;text-transform:uppercase;
+  display:flex;align-items:center;gap:7px;transition:color .35s}
+.sec-label::before{content:'//';color:var(--a2);font-weight:700}
+.sec-count{font-family:var(--mono);font-size:.63rem;color:var(--t3);transition:color .35s}
 
+/* PROJECTS */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));
+  gap:1px;background:var(--b);border:1px solid var(--b);transition:var(--trans)}
+.pc{background:var(--bg);padding:1.7rem;cursor:none;position:relative;
+  overflow:hidden;transition:background .25s,var(--trans);
+  text-decoration:none;color:inherit;display:block}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .3s,background .35s}
+.pc:hover{background:var(--s)}
+.pc:hover::before{transform:scaleX(1)}
+.pc.feat{grid-column:span 2;background:var(--s2)}
+.pc.feat::before{background:var(--a2)}
+@media(max-width:620px){.pc.feat{grid-column:span 1}}
+.pc:hover .parr{transform:translate(4px,-4px);color:var(--a)}
+.ptag{font-family:var(--mono);font-size:.6rem;color:var(--a);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem;
+  display:flex;align-items:center;gap:6px;transition:color .35s}
+.ptag::before{content:'';width:4px;height:4px;background:var(--a);
+  border-radius:50%;transition:background .35s}
+.pname{font-size:1.1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+.pdesc{font-family:var(--mono);font-size:.69rem;color:var(--t2);
+  line-height:1.75;margin-bottom:.9rem;transition:color .35s}
+.ptech{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:.9rem}
+.ptch{font-family:var(--mono);font-size:.6rem;color:var(--t3);
+  border:1px solid var(--b);padding:2px 7px;transition:var(--trans)}
+.parr{position:absolute;top:1.5rem;right:1.5rem;font-size:.9rem;
+  color:var(--t3);transition:transform .2s,color .2s}
+.plink{font-family:var(--mono);font-size:.65rem;color:var(--t3);
+  border-bottom:1px solid transparent;
+  transition:color .2s,border-color .2s;text-decoration:none}
+.plink:hover{color:var(--a);border-color:var(--a)}
 
-/* project image zoom effect */
+/* SKILLS */
+.sk-sec{border-top:1px solid var(--b);padding:3rem 2.5rem;transition:var(--trans)}
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 4rem;margin-top:1.8rem}
+@media(max-width:560px){.sk-grid{grid-template-columns:1fr}}
+.sk-row{margin-bottom:.5rem}
+.sk-top{display:flex;justify-content:space-between;margin-bottom:6px}
+.sk-name{font-family:var(--mono);font-size:.69rem;color:var(--t);transition:color .35s}
+.sk-pct{font-family:var(--mono);font-size:.63rem;color:var(--a);transition:color .35s}
+.sk-pct.alt{color:var(--a2)}
+.sk-track{height:2px;background:var(--b);overflow:hidden;transition:background .35s}
+.sk-fill{height:100%;background:var(--a);width:0%;
+  transition:width 1.4s cubic-bezier(.16,1,.3,1),background .35s}
+.sk-fill.alt{background:var(--a2)}
 
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
+/* EXPERIENCE */
+.xp-sec{border-top:1px solid var(--b);padding:3rem 2.5rem;transition:var(--trans)}
+.xp-item{border-left:1px solid var(--b);padding-left:1.5rem;
+  margin-bottom:2rem;position:relative;transition:border-color .3s,var(--trans)}
+.xp-item::before{content:'';width:9px;height:9px;background:var(--bg);
+  border:1px solid var(--t3);border-radius:50%;
+  position:absolute;left:-5px;top:4px;transition:all .3s,var(--trans)}
+.xp-item:hover{border-color:var(--a)}
+.xp-item:hover::before{background:var(--a);border-color:var(--a);box-shadow:0 0 8px var(--a)}
+.xp-date{font-family:var(--mono);font-size:.62rem;color:var(--t3);
+  margin-bottom:.3rem;transition:color .35s}
+.xp-role{font-size:.95rem;font-weight:700;margin-bottom:.2rem}
+.xp-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;
+  border:1px solid var(--a2);color:var(--a2);
+  padding:1px 6px;letter-spacing:.06em;margin-left:9px;vertical-align:middle}
+.xp-co{font-family:var(--mono);font-size:.68rem;color:var(--a);
+  margin-bottom:.55rem;transition:color .35s}
+.xp-desc{font-family:var(--mono);font-size:.68rem;color:var(--t2);
+  line-height:1.8;transition:color .35s}
+.xp-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.55rem}
+.xp-chip{font-family:var(--mono);font-size:.58rem;
+  background:var(--ag);padding:2px 8px;color:var(--a);
+  border:1px solid var(--b);transition:var(--trans)}
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
+/* SKILLS CATEGORIES */
+.sk-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:1.2rem;margin-top:1.5rem}
+.sk-cat{background:var(--s);border:1px solid var(--b);padding:1.1rem;transition:var(--trans)}
+.sk-cat:hover{border-color:var(--b2)}
+.sk-cat-title{font-family:var(--mono);font-size:.6rem;color:var(--a2);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem;transition:color .35s}
+.sk-items{display:flex;flex-wrap:wrap;gap:4px}
+.sk-item{font-family:var(--mono);font-size:.62rem;color:var(--t3);
+  border:1px solid var(--b);padding:2px 7px;transition:var(--trans)}
+.sk-item:hover{color:var(--a);border-color:var(--a)}
 
+/* ABOUT */
+.ab-sec{border-top:1px solid var(--b);border-bottom:1px solid var(--b);
+  padding:3rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;transition:var(--trans)}
+@media(max-width:640px){.ab-sec{grid-template-columns:1fr;gap:2rem}}
+.ab-title{font-size:clamp(1.7rem,4vw,2.9rem);font-weight:800;
+  letter-spacing:-.03em;line-height:1.05;margin-bottom:.55rem}
+.ab-gpa{font-family:var(--mono);font-size:.62rem;color:var(--a);
+  letter-spacing:.1em;margin-bottom:1.1rem;transition:color .35s}
+.ab-body{font-family:var(--mono);font-size:.7rem;color:var(--t2);
+  line-height:1.9;transition:color .35s}
+.ab-list{margin-top:1.3rem;display:flex;flex-direction:column;gap:6px}
+.ab-row{font-family:var(--mono);font-size:.66rem;color:var(--t3);
+  display:flex;gap:9px;transition:color .35s}
+.ab-row strong{color:var(--t);font-weight:400;flex-shrink:0;
+  min-width:38px;transition:color .35s}
+.ab-row a{color:var(--a);transition:color .35s}
 
+/* FOOTER */
+footer{padding:1.8rem 2.5rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:.8rem;
+  border-top:1px solid var(--b);transition:var(--trans)}
+.fc{font-family:var(--mono);font-size:.65rem;color:var(--t3);transition:color .35s}
+.flinks{display:flex;gap:1.4rem}
+.flink{font-family:var(--mono);font-size:.65rem;color:var(--t3);
+  text-decoration:none;transition:color .2s;cursor:none}
+.flink:hover{color:var(--a)}
+
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);
+  z-index:800;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.open{display:flex}
+.modal{background:var(--s);border:1px solid var(--b);
+  width:100%;max-width:440px;animation:mIn .2s ease;transition:var(--trans)}
+@keyframes mIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.mhead{padding:1.3rem 1.4rem;border-bottom:1px solid var(--b);
+  display:flex;justify-content:space-between;align-items:flex-start;transition:var(--trans)}
+.mhead-l{display:flex;align-items:center;gap:12px}
+.mico{width:42px;height:42px;background:var(--b);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;transition:background .35s}
+.mtitle{font-weight:800;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:2px}
+.msub{font-family:var(--mono);font-size:.6rem;color:var(--a);transition:color .35s}
+.mclose{font-family:var(--mono);font-size:.95rem;color:var(--t3);
+  background:none;border:none;cursor:none;padding:4px 6px;
+  transition:color .2s;line-height:1}
+.mclose:hover{color:var(--a2)}
+.mbody{padding:1.3rem 1.4rem}
+.mbody p{font-family:var(--mono);font-size:.7rem;color:var(--t2);
+  line-height:1.85;margin-bottom:.7rem;transition:color .35s}
+.mbody p em{color:var(--a);font-style:normal;transition:color .35s}
+.mstats{display:flex;gap:.7rem;margin:.9rem 0;flex-wrap:wrap}
+.mst{background:var(--b);padding:.55rem .9rem;transition:background .35s}
+.mst-n{font-family:var(--mono);font-size:1.1rem;font-weight:700;
+  color:var(--a);line-height:1;transition:color .35s}
+.mst-l{font-family:var(--mono);font-size:.56rem;color:var(--t3);
+  margin-top:4px;transition:color .35s}
+.mtags{display:flex;flex-wrap:wrap;gap:5px;margin-top:.8rem}
+.mtag{font-family:var(--mono);font-size:.6rem;
+  border:1px solid var(--b);color:var(--t3);
+  padding:2px 8px;transition:var(--trans)}
+.mtag.g{border-color:var(--a);color:var(--a)}
+.mtag.r{border-color:var(--a2);color:var(--a2)}
+.mtag.b{border-color:var(--a3);color:var(--a3)}
+.mcta{display:block;width:100%;margin-top:1rem;background:var(--a);
+  color:var(--bg);border:none;padding:.62rem;
+  font-family:var(--mono);font-size:.68rem;font-weight:700;
+  cursor:none;letter-spacing:.05em;text-align:center;
+  text-decoration:none;transition:opacity .15s,background .35s,color .35s}
+.mcta:hover{opacity:.85}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--b)}
+::-webkit-scrollbar-thumb:hover{background:var(--a)}
 </style>
+</head>
+<body>
 
+<div id="cur"></div>
+<div id="cur2"></div>
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Mudit Choksi</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+<!-- NAV -->
+<nav>
+  <div class="logo"><span class="logo-dot"></span>Mudit Choksi</div>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="#projects">work</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">exp</a>
+      <a href="#about">about</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem">
+      <span class="theme-label" id="themeLabel">dark</span>
+      <div class="theme-toggle" id="themeToggle" title="Toggle theme"></div>
+    </div>
+    <a href="mailto:muditdchoksi@gmail.com" class="hire-btn">hire me</a>
+  </div>
+</nav>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/file.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Mudit Choksi</span></h1>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ti">Software Engineer @ Diversified Automation<span class="dot"> ✦ </span></span>
+    <span class="ti">React · Node.js · Python · Java<span class="dot"> ✦ </span></span>
+    <span class="ti">MS CS · GPA 3.84<span class="dot"> ✦ </span></span>
+    <span class="ti">Indiana University Bloomington<span class="dot"> ✦ </span></span>
+    <span class="ti">AWS · Docker · Kubernetes<span class="dot"> ✦ </span></span>
+    <span class="ti">Louisville, KY<span class="dot"> ✦ </span></span>
+    <span class="ti">Open to Opportunities<span class="dot"> ✦ </span></span>
+    <span class="ti">Software Engineer @ Diversified Automation<span class="dot"> ✦ </span></span>
+    <span class="ti">React · Node.js · Python · Java<span class="dot"> ✦ </span></span>
+    <span class="ti">MS CS · GPA 3.84<span class="dot"> ✦ </span></span>
+    <span class="ti">Indiana University Bloomington<span class="dot"> ✦ </span></span>
+    <span class="ti">AWS · Docker · Kubernetes<span class="dot"> ✦ </span></span>
+    <span class="ti">Louisville, KY<span class="dot"> ✦ </span></span>
+    <span class="ti">Open to Opportunities<span class="dot"> ✦ </span></span>
+  </div>
+</div>
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'Engineer  ',
-						'Tech Enthusiast  ',
-						'Geek   ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>A jack of all trades & master of one :)</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<br>
-			            <p><a href="https://www.linkedin.com/in/muditdevenchoksi/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
-							<a href="https://github.com/mudit-choksi" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/picture_cropped-Photoroom (1).png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Mudit Devenkumar Choksi</span></p>
-										<p><span class="title-s">Current Job Role: </span> <span>Software Engineer</span></p>
-										<p><span class="title-s">Experience: </span> <span>2 Years</span></p>
-										<p><span class="title-s">Address: </span> <span>Louisville, KY</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>JavaScript</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Java</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Python</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>SQL</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Web Development</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span>Machine Learning</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>I am Mudit Choksi, a versatile full stack software engineer with around two years of experience. 
-									I recently completed my MS in Computer Science and have expertise in Python, JavaScript, React, and Angular. 
-									I have a proven track record of developing impactful web applications and optimizing business solutions. 
-									Passionate about solving complex problems and continually learning, I excel in collaborative environments and 
-									strive to create user-friendly and efficient solutions.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Software &amp Web Development </span></li>
-									<li class="d-flex"><span>Education:</span> <span>M.S. in Computer Science</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Gujarati &amp; Marathi</span></li>
-									<li class="d-flex"><span>Tools:</span> <span>SpringBoot, Git, Docker, AWS, Node &amp; ASP.NET</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>Cloud, UI/UX, Agile Methodologies &amp; Microsoft Dynamics 365</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Gaming, Sports, Teaching</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="20">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/muditdevenchoksi/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Experienced Full Stack Software Engineer with 2+ years of expertise in developing scalable web applications using React, Node.js, Python, and MySQL. Skilled in agile methodologies, CI/CD implementation, and delivering high-quality code to optimize user experiences and achieve business goals.</p>
-          </div>
-        </div>
-
-		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">Aug 2024 - Present</span>
-						<h2>Software Engineer</h2>
-						<span class="position">Diversified Automation Inc.</span>
-						<p class="mt-4">Mentor and guide new hires and interns while collaborating with cross-functional teams to deliver complex automation projects. Drive process improvements, implement scalable solutions, and achieve measurable efficiency gains across multiple initiatives.
-							<ul>
-								<li>Created object-oriented solutions in Java and Python scripting, reducing time utilization by 25% through streamlined workflows.</li>
-								<li>Optimized real-time data logging for package tracking using MySQL and ODBC, increasing tracking accuracy by 40% across multiple client systems.</li>
-								<li>Engineered advanced HMI systems and PLC logic, enabling customized automation solutions for over 10 projects.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">May 2023 - Aug 2023</span>
-						<h2>Full Stack Engineer Intern</h2>
-						<span class="position">Twin Cities Innovation Alliance</span>
-						<p class="mt-4">TCIA promotes innovation and collaboration in the Minneapolis region by connecting startups, businesses, and community stakeholders. 
-							<ul>
-								<li>Led the development of company's web application using JavaScript, jQuery, and ReactJS, leading to 24% surge in
-									website analytics.</li>
-								<li>Took charge of creating automated workflows and designed logic for numerous functionalities using Microsoft Dynamics,
-									pivotal for conducting Unit and system testing of newly integrated features.</li>
-								<li>Initiated Azure DevOps practices, contributing to optimizing development processes and reinforcing system architecture.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">May 2021 - Dec 2021</span>
-						<h2>Software Developer Intern</h2>
-						<span class="position">DVN IT Solutions</span>
-						<p class="mt-4">DVN IT Solutions specializes in providing comprehensive IT services and solutions, including software development, IT consulting, and system integration.
-							<ul>
-								<li>Contributed to the development of a robust e-commerce marketplace utilizing ASP.NET, MVC framework, C#,
-									EF Core & MSSQL, facilitating seamless user interactions and transactions.</li>
-								<li>Collaborated within an Agile environment to iteratively deliver features, ensuring responsiveness and enhancing overall
-									project efficiency.</li>
-								<li>Played a pivotal role in developing the frontend using Angular framework, leading to increase in website traffic by 20%.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">May 2020 - Dec 2020</span>
-						<h2>Software Engineer Intern</h2>
-						<span class="position">Prosoft Informatics</span>
-						<p class="mt-4">Prosoft Informatics is an IT company that specializes in providing software development, IT consulting, and business solutions.
-							<ul>
-								<li>Optimised business solutions for several clients using Java, J2EE, MySQL, and SpringBoot in an Agile environment,
-									hence slashing paperwork by 80%.</li>
-								<li>Pioneered dynamic data visualization techniques using jQuery and Javascript, catalyzing operational efficiency gains
-									and equipping clients with actionable insights.</li>
-								<li>Enhanced SaaS data security and integrity via meticulous JPA handling, fostering unwavering client trust. Additionally,
-									actively engaged in code reviews and testing using Jest and JUnit.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		<br>
-		<br>
-
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2022 - 2024</span>
-    					<h2>M.S. in Computer Science</h2>
-    					<span class="position">Indiana University Bloomington</span>
-    					<p class="mt-4">GPA: 3.85 / 4.00</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2018 - 2022</span>
-    					<h2>Bachelor's in Computer Engineering</h2>
-    					<span class="position">University of Mumbai</span>
-    					<p class="mt-4">GPA: 3.66 / 4.00</p>
-    				</div>
-				</div>
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/1Cp9O-vrYDL0I85R3H4I7DYvhWcQWTSGk/view?usp=drive_link" class="btn btn-primary py-4 px-5">Download Resume</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-   
-
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample Software & Web development projects on JavaScript, Python, SQL & ML.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/mudit-choksi/Banking-System" class="block-20 zoom-effect" style="background-image: url('images/istockphoto-1279186362-612x612.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/mudit-choksi/Banking-System">Secure Banking System</a></h3>
-                <p>Developed a secure e-banking app with NodeJS and ReactJS, implementing 2FA, OTP, and advanced security protocols.</p>
-              </div>
-            </div>
-          </div>
-		  <!-- ----- -->
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/mudit-choksi/ecommerceDjangoAWS/" class="block-20 zoom-effect" style="background-image: url('images/1682674004-Untitleddesign-2023-04-28T145340603.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/mudit-choksi/ecommerceDjangoAWS/">E-commerce Admin Portal</a></h3>
-                <p>Developed a scalable Django web app on AWS, enabling seamless admin-level product management with robust CI/CD practices.</p>
-              </div>
-            </div>
-          </div>
-		  <!-- ----- -->
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/mudit-choksi/service-rental-backend" class="block-20 zoom-effect" style="background-image: url('images/360_F_222904305_qz1ObDb3t9unTZ9HHglqxnYoQYIvJZqz.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/mudit-choksi/service-rental-backend">Stuserve</a></h3>
-                <p>Designed and developed a full-stack web app with Angular and NodeJS, integrating Stripe for payments and implementing CI/CD and Unit Testing in an Agile environment.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/mudit-choksi/sepsis-prediction-hosting" class="block-20 zoom-effect" style="background-image: url('images/doctors-and-personalized-prescriptive-analytics-big-data-healthcare-personalized-medicine-big-data-patient-care-predictive-analytics-concept-illustration-vector.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/mudit-choksi/sepsis-prediction-hosting">Sepsis Prediction Platform</a></h3>
-				  <p>Built a medical condition prediction platform using ReactJS and Flask, achieving 15% better accuracy with ensemble learning models like LightGBM, XGBoost, and Random Forest.</p>
-				</div>
-			  </div>
-			</div>
-			<!-- ----- -->
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/mudit-choksi/ToxicCommentClassification" class="block-20 zoom-effect" style="background-image: url('images/1692017652186.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/mudit-choksi/ToxicCommentClassification">Toxic Comment Classification</a></h3>
-				  <p>Developed a multi-headed model to detect various types of toxicity in Wikipedia comments, improving classification accuracy beyond existing standards.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
-    </section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="60">0</strong>
-                <span>Skills</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="200">0</strong>
-                <span>Problems Solved</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
+<!-- HERO -->
+<div class="hero rv">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Software Engineer · Louisville, KY</div>
+      <h1>Building things<br>that <span class="stroke">actually</span><br>ship<span class="blink">_</span></h1>
+      <p class="hero-sub">
+        <b>Mudit Choksi.</b> Software Engineer @ Diversified Automation. MS CS, Indiana University — GPA 3.84. Full stack + automation + ML. I write code that cuts paperwork by 80% and boosts analytics by 24%.
+      </p>
+      <div class="btns">
+        <button class="btn-a" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View My Work ↓</button>
+        <a href="https://drive.google.com/file/d/1Cp9O-vrYDL0I85R3H4I7DYvhWcQWTSGk/view?usp=drive_link" target="_blank" class="btn-b">Download Resume</a>
+      </div>
+      <div class="hint">drag desk to rotate on any axis · click items <span class="blink">_</span></div>
+    </div>
+    <div>
+      <div class="desk-wrap">
+        <canvas id="threeCanvas"></canvas>
+        <div class="canvas-hud">
+          <div class="hud-txt" id="hudTxt">drag to rotate · <em>click items to explore</em></div>
+          <div class="hud-btns">
+            <!-- <button class="hud-btn" id="btnTop">top</button> -->
+            <button class="hud-btn" id="btnFront">front</button>
+            <button class="hud-btn" id="btnIso">iso</button>
+            <button class="hud-btn" id="btnReset">reset</button>
           </div>
         </div>
       </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/pexels-photo-360912.jpeg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to bring ideas up &amp; turn them into digital assets </h4>
-						<br>
-						<p><a href="https://github.com/mudit-choksi" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
+    </div>
+  </div>
+</div>
 
+<!-- STATS -->
+<div class="stats-bar rv">
+  <div class="stat"><div class="stat-n" id="s1">0</div><div class="stat-l">projects shipped</div></div>
+  <div class="stat"><div class="stat-n" id="s2">0</div><div class="stat-l">yrs experience</div></div>
+  <div class="stat"><div class="stat-n" id="s3">0.00</div><div class="stat-l">MS GPA</div></div>
+  <div class="stat"><div class="stat-n" id="s4">0</div><div class="stat-l">roles held</div></div>
+</div>
 
+<!-- PROJECTS -->
+<div class="section rv" id="projects">
+  <div class="sec-head">
+    <div class="sec-label">Selected Projects</div>
+    <!-- <div class="sec-count">04 projects</div> -->
+  </div>
+  <div class="pgrid">
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
+    <a class="pc feat" href="https://github.com/mudit-choksi/Banking-System" target="_blank">
+      <span class="parr">↗</span>
+      <div class="ptag">Featured · Full Stack</div>
+      <div class="pname">Secure Banking System</div>
+      <div class="pdesc">Full-stack e-banking with sophisticated 2FA & OTP system. ExpressJS/NodeJS backend with rate limiters, DOS protection, HTTPS, SSL certificates and secure transaction monitoring.</div>
+      <div class="ptech"><span class="ptch">NodeJS</span><span class="ptch">ReactJS</span><span class="ptch">MongoDB</span><span class="ptch">Tailwind CSS</span><span class="ptch">2FA/OTP</span><span class="ptch">SSL</span></div>
+      <span class="plink">GitHub →</span>
+    </a>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Bloomington, Indiana</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://18126063599">+ 1 812 606 3599</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:muditdchoksi@gmail.com">muditdchoksi@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1Cp9O-vrYDL0I85R3H4I7DYvhWcQWTSGk/view?usp=drive_link">Resume Link</a></p>
-	          </div>
-          </div>
+    <a class="pc" href="https://github.com/mudit-choksi/ecommerceDjangoAWS/" target="_blank">
+      <span class="parr">↗</span>
+      <div class="ptag">Backend · Cloud · AWS</div>
+      <div class="pname">E-commerce Admin Portal</div>
+      <div class="pdesc">Scalable Django app on AWS using EC2, S3, RDS (PostgreSQL), and CI/CD. Admin-level CRUD operations with resilient architecture for growing product catalogs.</div>
+      <div class="ptech"><span class="ptch">Python</span><span class="ptch">Django</span><span class="ptch">PostgreSQL</span><span class="ptch">AWS EC2/S3</span><span class="ptch">CI/CD</span></div>
+      <span class="plink">GitHub →</span>
+    </a>
 
-		  <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Want to<span> connect further?  </span> <a href="https://calendly.com/muditdchoksi" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/muditdevenchoksi/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://x.com/MuditChoksi"><span class="icon-twitter"></span></a></li>
-					  <li class="ftco-animate"><a href="https://github.com/mudit-choksi"><span class="icon-github"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/mudit_choksi/"><span class="icon-instagram"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
+    <a class="pc" href="https://github.com/mudit-choksi/service-rental-backend" target="_blank">
+      <span class="parr">↗</span>
+      <div class="ptag">Full Stack · Payments</div>
+      <div class="pname">StuServe</div>
+      <div class="pdesc">Full-stack service rental platform — REST API with Angular & JavaScript frontend. Stripe payment integration, CI/CD pipeline, unit testing in Agile with JIRA task management.</div>
+      <div class="ptech"><span class="ptch">MongoDB</span><span class="ptch">ExpressJS</span><span class="ptch">AngularJS</span><span class="ptch">NodeJS</span><span class="ptch">Stripe</span></div>
+      <span class="plink">GitHub →</span>
+    </a>
 
+    <a class="pc" href="https://github.com/mudit-choksi/sepsis-prediction-hosting" target="_blank">
+      <span class="parr">↗</span>
+      <div class="ptag">ML · Healthcare · Python</div>
+      <div class="pname">Sepsis Prediction Platform</div>
+      <div class="pdesc">Medical condition prediction platform using ReactJS, Flask and REST APIs. Ensemble learning with LightGBM, XGBoost and Random Forest achieved 15% better accuracy than existing models.</div>
+      <div class="ptech"><span class="ptch">Python</span><span class="ptch">Flask</span><span class="ptch">ReactJS</span><span class="ptch">LightGBM</span><span class="ptch">XGBoost</span></div>
+      <span class="plink">GitHub →</span>
+    </a>
 
- 
-	
-    <footer class="ftco-footer ftco-section" style="background-image: url(images/part_2_pexels-photo-360912.jpeg)">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p>
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by me!</p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
+  </div>
+</div>
 
+<!-- SKILLS -->
+<div class="sk-sec rv" id="skills">
+  <div class="sec-head"><div class="sec-label">Technical Skills</div></div>
+  <div class="sk-cats">
+    <div class="sk-cat">
+      <div class="sk-cat-title">Languages</div>
+      <div class="sk-items">
+        <span class="sk-item">Python</span><span class="sk-item">Java</span><span class="sk-item">TypeScript</span><span class="sk-item">SQL</span><span class="sk-item">J2EE</span><span class="sk-item">C#</span><span class="sk-item">C++</span><span class="sk-item">NodeJS</span><span class="sk-item">PHP</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-cat-title">Web / Frontend</div>
+      <div class="sk-items">
+        <span class="sk-item">React</span><span class="sk-item">Angular</span><span class="sk-item">JavaScript</span><span class="sk-item">HTML/CSS</span><span class="sk-item">ASP.NET</span><span class="sk-item">Django</span><span class="sk-item">jQuery</span><span class="sk-item">Bootstrap</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-cat-title">Backend / DB</div>
+      <div class="sk-items">
+        <span class="sk-item">SpringBoot</span><span class="sk-item">REST APIs</span><span class="sk-item">GraphQL</span><span class="sk-item">MySQL</span><span class="sk-item">PostgreSQL</span><span class="sk-item">MongoDB</span><span class="sk-item">Hibernate</span><span class="sk-item">MVC</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-cat-title">DevOps / Cloud</div>
+      <div class="sk-items">
+        <span class="sk-item">AWS</span><span class="sk-item">Docker</span><span class="sk-item">Kubernetes</span><span class="sk-item">Git</span><span class="sk-item">Azure DevOps</span><span class="sk-item">Linux</span><span class="sk-item">JUnit</span><span class="sk-item">Jest</span>
+      </div>
+    </div>
+  </div>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div style="margin-top:2rem">
+    <div class="sec-label" style="margin-bottom:1.2rem">Proficiency</div>
+    <div class="sk-grid" id="skGrid">
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">JavaScript / TypeScript</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" data-w="95"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">React / Angular</span><span class="sk-pct">92%</span></div><div class="sk-track"><div class="sk-fill" data-w="92"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">Python</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" data-w="90"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">Java / Spring Boot</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill" data-w="88"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">Node.js / Express</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill" data-w="88"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">SQL / PostgreSQL / MongoDB</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" data-w="85"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">AWS / Docker / Kubernetes</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill" data-w="80"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><span class="sk-name">Machine Learning / Data</span><span class="sk-pct alt">75%</span></div><div class="sk-track"><div class="sk-fill alt" data-w="75"></div></div></div>
+    </div>
+  </div>
+</div>
 
+<!-- EXPERIENCE -->
+<div class="xp-sec rv" id="experience">
+  <div class="sec-head">
+    <div class="sec-label">Experience</div>
+    <div class="sec-count">04 roles</div>
+  </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+  <div class="xp-item">
+    <div class="xp-date">Aug 2024 — Present</div>
+    <div class="xp-role">Software Engineer <span class="xp-badge">CURRENT</span></div>
+    <div class="xp-co">Diversified Automation Inc. · Louisville, KY</div>
+    <div class="xp-desc">Creating OOP solutions in Java and Python reducing time utilization by 25%. Optimized real-time data logging for package tracking with MySQL/ODBC — 40% accuracy boost across 10+ client systems. Engineered advanced HMI systems and PLC logic for customized automation solutions.</div>
+    <div class="xp-chips"><span class="xp-chip">−25% time</span><span class="xp-chip">+40% accuracy</span><span class="xp-chip">10+ projects</span><span class="xp-chip">Java · Python · MySQL</span></div>
+  </div>
+
+  <div class="xp-item">
+    <div class="xp-date">Jan 2023 — May 2024</div>
+    <div class="xp-role">Graduate Teaching Assistant <span class="xp-badge">TEACHING</span></div>
+    <div class="xp-co">Indiana University Bloomington · Bloomington, IN</div>
+    <div class="xp-desc">TA for Data Mining, Cloud Computing, and Software Engineering I & II. Led lab sessions, directed 8 project teams as PM. Mentored on Docker, Spring, MVC, Software Testing, Git.</div>
+    <div class="xp-chips"><span class="xp-chip">8 teams managed</span><span class="xp-chip">500+ students</span></div>
+  </div>
+
+  <div class="xp-item">
+    <div class="xp-date">May 2023 — Aug 2023</div>
+    <div class="xp-role">Full Stack Engineer Intern</div>
+    <div class="xp-co">Twin Cities Innovation Alliance · Minneapolis, MN</div>
+    <div class="xp-desc">Built web app with JavaScript, jQuery, ReactJS → 24% surge in analytics. Designed Microsoft Dynamics workflows and automated logic for unit/system testing. Introduced Azure DevOps practices.</div>
+    <div class="xp-chips"><span class="xp-chip">+24% analytics</span><span class="xp-chip">Azure DevOps</span><span class="xp-chip">MS Dynamics</span></div>
+  </div>
+
+  <div class="xp-item">
+    <div class="xp-date">May 2021 — Dec 2021</div>
+    <div class="xp-role">Software Developer Intern</div>
+    <div class="xp-co">DVN IT Solutions · Mumbai, India</div>
+    <div class="xp-desc">Built e-commerce marketplace with ASP.NET, MVC, C#, EF Core & MSSQL. Angular frontend increased website traffic by 20%. Agile sprints with iterative feature delivery.</div>
+    <div class="xp-chips"><span class="xp-chip">+20% traffic</span><span class="xp-chip">ASP.NET · Angular</span></div>
+  </div>
+
+  <div class="xp-item">
+    <div class="xp-date">May 2020 — Dec 2020</div>
+    <div class="xp-role">Software Engineer Intern</div>
+    <div class="xp-co">Prosoft Informatics · Mumbai, India</div>
+    <div class="xp-desc">Java, J2EE, MySQL, SpringBoot solutions cutting client paperwork by 80%. Built dynamic data visualizations with jQuery. Enhanced SaaS security via JPA, code reviews with Jest/JUnit.</div>
+    <div class="xp-chips"><span class="xp-chip">−80% paperwork</span><span class="xp-chip">Spring · MySQL</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="ab-sec rv" id="about">
+  <div>
+    <div class="ab-title">The engineer<br>behind the<br>code<span class="blink">_</span></div>
+    <div class="ab-gpa">M.S. COMPUTER SCIENCE · GPA 3.84 · INDIANA UNIVERSITY</div>
+  </div>
+  <div>
+    <p class="ab-body">
+      Software Engineer at Diversified Automation, building automation systems, HMI, and data pipelines that make real factories run faster and smarter.<br><br>
+      Previously: full stack intern, grad TA, and ML builder. I've shipped banking systems, e-commerce platforms, and medical AI. I write code that actually gets used.
+    </p>
+    <div class="ab-list">
+      <div class="ab-row"><strong>loc</strong> Louisville, KY (open to relocate)</div>
+      <div class="ab-row"><strong>edu</strong> MS CS, Indiana University · BE CE, Univ. of Mumbai</div>
+      <div class="ab-row"><strong>work</strong> Diversified Automation Inc. — Aug 2024 → Present</div>
+      <div class="ab-row"><strong>lang</strong> English, Hindi, Gujarati, Marathi</div>
+      <div class="ab-row"><strong>phone</strong> 812-606-3599</div>
+      <div class="ab-row"><strong>chat</strong> <a href="https://calendly.com/muditdchoksi" target="_blank">calendly.com/muditdchoksi</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fc">© 2026 Mudit Choksi · muditdchoksi@gmail.com</div>
+  <div class="flinks">
+    <a class="flink" href="https://github.com/mudit-choksi" target="_blank">GitHub</a>
+    <a class="flink" href="https://www.linkedin.com/in/muditdevenchoksi/" target="_blank">LinkedIn</a>
+    <a class="flink" href="mailto:muditdchoksi@gmail.com">Email</a>
+    <a class="flink" href="tel:+18126063599">+1 812-606-3599</a>
+    <a class="flink" href="https://calendly.com/muditdchoksi" target="_blank">Calendly</a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="mhead">
+      <div class="mhead-l">
+        <div class="mico" id="mIco"></div>
+        <div><div class="mtitle" id="mTitle"></div><div class="msub" id="mSub"></div></div>
+      </div>
+      <button class="mclose" id="mClose">✕</button>
+    </div>
+    <div class="mbody" id="mBody"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  cur2.style.left=e.clientX+'px';cur2.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,.pc,.hud-btn,.flink,.sk-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+
+/* ===== THEME TOGGLE ===== */
+const html=document.documentElement;
+const toggle=document.getElementById('themeToggle');
+const label=document.getElementById('themeLabel');
+let isDark=true;
+function applyTheme(dark){
+  isDark=dark;
+  html.setAttribute('data-theme',dark?'dark':'light');
+  label.textContent=dark?'dark':'light';
+  if(scene)updateSceneTheme(dark);
+}
+toggle.addEventListener('click',()=>applyTheme(!isDark));
+
+/* ===== REVEAL ===== */
+const ro=new IntersectionObserver(es=>{
+  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);ro.unobserve(e.target)}});
+},{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+/* ===== COUNT UP ===== */
+function countUp(id,t,dec,dur){
+  const el=document.getElementById(id),step=t/(dur/16);let c=0;
+  const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=dec?c.toFixed(2):Math.round(c);if(c>=t)clearInterval(iv)},16);
+}
+const sro=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){countUp('s1',20,0,5000);countUp('s2',4,0,5000);countUp('s3',3.84,2,4000);countUp('s4',5,0,4000);sro.disconnect()}});
+},{threshold:.3});
+sro.observe(document.querySelector('.stats-bar'));
+
+/* ===== SKILL BARS ===== */
+const skro=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sk-fill').forEach((f,i)=>setTimeout(()=>{f.style.width=f.dataset.w+'%'},i*80));skro.disconnect()}});
+},{threshold:.2});
+skro.observe(document.getElementById('skGrid'));
+
+/* ===== DESK ITEM DATA ===== */
+const ITEMS={
+  monitor:{ico:'🖥',title:'The Monitor',sub:'4K · VS Code · React',
+    body:`<p>Where the shipping happens. <em>React</em> on the left, <em>VS Code</em> right, terminal always open. TypeScript strict mode — yes, I'm that person.</p><p>Current repo: automation dashboard for Diversified Automation. Stack: <em>Java + Python + MySQL</em>.</p>`,
+    stats:[{n:'5+',l:'projects'},{n:'4yr',l:'daily driver'},{n:'∞',l:'open tabs'}],
+    tags:[{t:'React',c:'g'},{t:'VS Code',c:'b'},{t:'TypeScript',c:'g'},{t:'dark theme',c:'r'}],
+    link:{url:'https://github.com/mudit-choksi',txt:'GitHub'}},
+  laptop:{ico:'💻',title:'The Laptop',sub:'Python · ML · portability',
+    body:`<p>My <em>ML experiment machine</em> and hackathon companion. Runs Jupyter notebooks while the monitor handles React. Parallel processing, human edition.</p><p>Also used for writing Spring Boot microservices at 11pm.</p>`,
+    stats:[{n:'Python',l:'primary'},{n:'4',l:'hackathons'},{n:'2',l:'internships'}],
+    tags:[{t:'Python',c:'g'},{t:'Jupyter',c:'b'},{t:'Spring Boot',c:'g'},{t:'Docker',c:'b'}]},
+  coffee:{ico:'☕',title:'The Fuel System',sub:'black · no sugar · always',
+    body:`<p>Not a preference — <em>critical infrastructure</em>. Cup 1: wake up. Cup 2: HMI logic. Cup 3: PLC debugging at 5pm.</p><p>Current streak: 847 consecutive work days with ≥1 cup. Not verified. Probably accurate.</p>`,
+    stats:[{n:'3k+',l:'cups'},{n:'99.9%',l:'uptime'},{n:'0',l:'sugar added'}],
+    tags:[{t:'Black',c:'g'},{t:'No sugar',c:'r'},{t:'Essential dep',c:'b'}]},
+  plant:{ico:'🌱',title:'npm install',sub:'alive since 2022',
+    body:`<p>Named after the only command more reliable than my plant's survival instinct. Has survived: 3 apartment moves, 2 internships, 1 master's degree.</p><p>Watered every Friday. Or Thursday. Definitely not Wednesday.</p>`,
+    stats:[{n:'3yr',l:'surviving'},{n:'0',l:'bugs found'},{n:'1',l:'near-death'}],
+    tags:[{t:'Still alive',c:'g'},{t:'Low maintenance',c:'b'},{t:'Resilient',c:'g'}]},
+  notebook:{ico:'📓',title:'The Brain Dump',sub:'system design · PLC logic',
+    body:`<p>Every architecture diagram, every <em>HMI wireframe</em>, every "aha" moment starts here before it hits Figma or VS Code.</p><p>Current contents: automation system diagrams, a half-finished microservices sketch, and a surprisingly good grocery list.</p>`,
+    stats:[{n:'60+',l:'pages'},{n:'4',l:'ideas live'},{n:'1',l:'grocery list'}],
+    tags:[{t:'System Design',c:'b'},{t:'HMI Logic',c:'g'},{t:'Architecture',c:'b'},{t:'Doodles',c:'r'}]},
+  headphones:{ico:'🎧',title:'The Focus Stack',sub:'on = in the zone',
+    body:`<p>On head = coding. Off head = meetings. The universal signal — no documentation needed.</p><p>Lofi for CRUD work, synthwave for system design, <em>jazz when PLC logic is being cursed</em>. ANC always on.</p>`,
+    stats:[{n:'6h',l:'avg daily'},{n:'ANC',l:'always on'},{n:'0',l:'missed standups'}],
+    tags:[{t:'Lofi',c:'b'},{t:'Synthwave',c:'g'},{t:'Jazz debugging',c:'r'},{t:'ANC: on',c:'b'}]},
+  books:{ico:'📚',title:'The Stack',sub:'DDIA · Clean Code · SWE',
+    body:`<p><em>Designing Data-Intensive Applications</em> — dog-eared, highlighted, changed how I think about databases. <em>Clean Code</em> — why I refactor everything twice.</p><p>System Design Interview is what I study on lunch breaks.</p>`,
+    stats:[{n:'6',l:'owned'},{n:'3',l:'finished'},{n:'2',l:'in progress'}],
+    tags:[{t:'DDIA',c:'g'},{t:'Clean Code',c:'b'},{t:'SWE Interview',c:'g'},{t:'70% done',c:'r'}]},
+  lamp:{ico:'💡',title:'The Vibe Setter',sub:'3000K · optimal hours',
+    body:`<p>Warm light = evening deep work. Bright = morning standups and code reviews. <em>Color temperature affects code quality</em> — this is lived experience, not a hypothesis.</p><p>Also: the "Mudit is alive" indicator when it's past midnight.</p>`,
+    stats:[{n:'3000K',l:'warm mode'},{n:'∞',l:'ideas lit'},{n:'2am',l:'certified'}],
+    tags:[{t:'Warm mode',c:'g'},{t:'Vibe: on',c:'b'},{t:'2am certified',c:'r'}]},
+  phone:{ico:'📱',title:'The Side Channel',sub:'GitHub notifs · LinkedIn',
+    body:`<p>Primary: GitHub notifications. Secondary: LinkedIn DMs from recruiters I'm genuinely interested in. Third: the calculator for arithmetic I should be able to do.</p><p>📍 Louisville, KY. Open to remote + hybrid roles.</p>`,
+    stats:[{n:'∞',l:'GitHub pings'},{n:'Open',l:'to connect'},{n:'Dark',l:'mode always'}],
+    tags:[{t:'GitHub',c:'g'},{t:'LinkedIn DMs open',c:'b'},{t:'Louisville, KY',c:'g'}],
+    link:{url:'https://www.linkedin.com/in/muditdevenchoksi/',txt:'LinkedIn'}},
+  keyboard:{ico:'⌨',title:'The Mechanical',sub:'tactile · Cherry MX · loud',
+    body:`<p>Cherry MX Browns. Loud enough that my coworkers at Diversified know when I'm hitting a coding stride. <em>Every keystroke = event driven by passion and automation.</em></p><p>Current WPM: ~95. Goal: 120. Java files per week: too many to count.</p>`,
+    stats:[{n:'95',l:'WPM'},{n:'1M+',l:'keystrokes'},{n:'Cherry',l:'MX Brown'}],
+    tags:[{t:'Cherry MX Brown',c:'g'},{t:'Tactile',c:'b'},{t:'Loud',c:'r'},{t:'95 WPM',c:'g'}]},
+};
+
+function openModal(key){
+  const it=ITEMS[key];if(!it)return;
+  document.getElementById('mIco').textContent=it.ico;
+  document.getElementById('mTitle').textContent=it.title;
+  document.getElementById('mSub').textContent=it.sub;
+  let h=it.body||'';
+  if(it.stats)h+=`<div class="mstats">${it.stats.map(s=>`<div class="mst"><div class="mst-n">${s.n}</div><div class="mst-l">${s.l}</div></div>`).join('')}</div>`;
+  if(it.tags)h+=`<div class="mtags">${it.tags.map(t=>`<span class="mtag ${t.c||''}">${t.t}</span>`).join('')}</div>`;
+  if(it.link)h+=`<a class="mcta" href="${it.link.url}" target="_blank">open ${it.link.txt} ↗</a>`;
+  document.getElementById('mBody').innerHTML=h;
+  document.getElementById('modalBg').classList.add('open');
+}
+document.getElementById('mClose').onclick=()=>document.getElementById('modalBg').classList.remove('open');
+document.getElementById('modalBg').onclick=e=>{if(e.target===document.getElementById('modalBg'))document.getElementById('modalBg').classList.remove('open')};
+
+/* ===== THREE.JS 3D DESK ===== */
+let scene;
+(function(){
+  const canvas=document.getElementById('threeCanvas');
+  function W(){return canvas.parentElement.clientWidth}
+  function H(){return Math.max(400,Math.min(540,W()*0.6))}
+
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.15;
+
+  function setSize(){renderer.setSize(W(),H());camera.aspect=W()/H();camera.updateProjectionMatrix()}
+
+  scene=new THREE.Scene();
+  scene.background=new THREE.Color(0x060608);
+  scene.fog=new THREE.FogExp2(0x060608,0.016);
+
+  const camera=new THREE.PerspectiveCamera(42,W()/H(),0.1,100);
+  camera.position.set(0,3.8,7.2);
+  camera.lookAt(0,0.5,0);
+  setSize();
+
+  /* LIGHTS */
+  const ambient=new THREE.AmbientLight(0x334455,0.9);
+  scene.add(ambient);
+  const key=new THREE.DirectionalLight(0xffffff,1.8);
+  key.position.set(5,10,6);key.castShadow=true;
+  key.shadow.mapSize.set(2048,2048);
+  key.shadow.camera.near=0.1;key.shadow.camera.far=40;
+  [-8,8,-8,8].forEach((v,i)=>{if(i<2)key.shadow.camera[i===0?'left':'right']=v;else key.shadow.camera[i===2?'bottom':'top']=v});
+  key.shadow.bias=-0.0003;
+  scene.add(key);
+  const fill=new THREE.DirectionalLight(0x2244aa,0.5);fill.position.set(-6,4,-4);scene.add(fill);
+  const rim=new THREE.DirectionalLight(0xc8ff00,0.35);rim.position.set(0,2,-8);scene.add(rim);
+  const monGlow=new THREE.PointLight(0x00ff55,0.7,4);monGlow.position.set(-0.4,1.8,0.3);scene.add(monGlow);
+  const lampGlow=new THREE.PointLight(0xffdd88,0.9,3.5);lampGlow.position.set(-2.8,2.1,0.6);scene.add(lampGlow);
+  const phoneGlow=new THREE.PointLight(0x0055ff,0.3,2);phoneGlow.position.set(2.0,0.5,-0.7);scene.add(phoneGlow);
+
+  /* MATERIALS */
+  function mat(color,rough=0.5,metal=0,emissive=0,emInt=0){
+    return new THREE.MeshStandardMaterial({color,roughness:rough,metalness:metal,emissive,emissiveIntensity:emInt});
+  }
+  const M={
+    deskTop:mat(0x4a2c14,0.3,0.08),desk:mat(0x3a2010,0.5,0.05),
+    leg:mat(0x2a1808,0.6,0.05),mat:mat(0x141428,0.85),
+    monitor:mat(0x181820,0.2,0.7),screen:mat(0x041808,0.05,0.1,0x00ff44,0.12),
+    laptop:mat(0x1a1a1a,0.15,0.8),lapScreen:mat(0x041808,0.05,0.1,0x00cc44,0.08),
+    coffee:mat(0x2a1408,0.6,0.2),coffeeLiq:mat(0x1a0800,0.95),
+    plant:mat(0x1e3a0a,0.9),stem:mat(0x1a3208,0.9),leaf:mat(0x2a5014,0.8),
+    pot:mat(0x3a2010,0.7),soil:mat(0x1a0c06,0.95),
+    notebook:mat(0x0a1c0a,0.9),
+    phone:mat(0x14142a,0.1,0.9),phoneScreen:mat(0x050520,0.05,0.2,0x0044ff,0.07),
+    keyboard:mat(0x181818,0.6,0.3),key:mat(0x222228,0.7,0.2),
+    keyHi:mat(0x2a2a00,0.4,0.3,0xaaff00,0.35),
+    lamp:mat(0x282830,0.4,0.6),lampHead:mat(0x2a2a00,0.4,0.4,0xffdd44,0.35),
+    books:[mat(0x1a2a4a,0.8),mat(0x3a1a0a,0.8),mat(0x1a3a1a,0.8)],
+    hp:mat(0x18182e,0.3,0.7),hpCush:mat(0x0a0a22,0.9),
+    floor:mat(0x0a0a0c,0.95),chrome:mat(0x888898,0.1,0.95),
+  };
+
+  /* helpers */
+  function box(w,h,d,m){const g=new THREE.BoxGeometry(w,h,d);const me=new THREE.Mesh(g,m);me.castShadow=true;me.receiveShadow=true;return me}
+  function cyl(rt,rb,h,seg,m){const g=new THREE.CylinderGeometry(rt,rb,h,seg);const me=new THREE.Mesh(g,m);me.castShadow=true;me.receiveShadow=true;return me}
+  function sph(r,m){const g=new THREE.SphereGeometry(r,16,12);const me=new THREE.Mesh(g,m);me.castShadow=true;return me}
+  function add(parent,...children){children.forEach(c=>parent.add(c));return parent}
+
+  /* ROOT GROUP */
+  const root=new THREE.Group();scene.add(root);
+
+  /* FLOOR */
+  const flr=box(20,0.05,20,M.floor);flr.position.y=-2.225;flr.receiveShadow=true;root.add(flr);
+
+  /* DESK */
+  const deskG=new THREE.Group();
+  const top=box(6.2,0.14,2.8,M.deskTop);top.position.set(0,0.07,0);deskG.add(top);
+  const apron=box(6.2,0.1,0.1,M.desk);apron.position.set(0,-0.02,-1.35);deskG.add(apron);
+  [[2.7,1.1],[2.7,-1.1],[-2.7,1.1],[-2.7,-1.1]].forEach(([x,z])=>{
+    const leg=box(0.12,2.1,0.12,M.leg);leg.position.set(x,-1.12,z);deskG.add(leg);
+    const foot=box(0.22,0.06,0.22,M.leg);foot.position.set(x,-2.19,z);deskG.add(foot);
+  });
+  const dkMat=box(4.6,0.04,2.2,M.mat);dkMat.position.set(0,0.16,0.1);deskG.add(dkMat);
+  root.add(deskG);
+
+  /* MONITOR */
+  const monG=new THREE.Group();
+  const monBack=box(2.4,1.4,0.12,M.monitor);monBack.position.set(0,0,0);monG.add(monBack);
+  const monSc=box(2.2,1.22,0.01,M.screen);monSc.position.set(0,0,-0.07);monG.add(monSc);
+  const monBez=box(2.4,1.4,0.04,new THREE.MeshStandardMaterial({color:0x1c1c24,roughness:0.3,metalness:0.6}));monBez.position.set(0,0,-0.095);monG.add(monBez);
+  const monNeck=box(0.14,0.5,0.1,M.monitor);monNeck.position.set(0,-0.95,0.05);monG.add(monNeck);
+  const monBase=box(0.8,0.07,0.45,M.monitor);monBase.position.set(0,-1.22,0.18);monG.add(monBase);
+  monG.position.set(-0.5,1.40,0.2);monG.rotation.x=-0.06;root.add(monG);
+
+  /* LAPTOP */
+  const lapG=new THREE.Group();
+  const lapBase=box(1.4,0.08,0.95,M.laptop);lapBase.position.y=0;lapG.add(lapBase);
+  const lapLid=box(1.4,0.06,0.92,M.laptop);lapLid.position.set(0,0.54,-0.04);lapLid.rotation.x=-1.1;lapG.add(lapLid);
+  const lapSc=box(1.26,0.04,0.8,M.lapScreen);lapSc.position.set(0,0.545,-0.04);lapSc.rotation.x=-1.1;lapG.add(lapSc);
+  const lapLogo=sph(0.04,M.chrome);lapLogo.position.set(0,0.57,0.12);lapLogo.rotation.x=-1.1;lapG.add(lapLogo);
+  lapG.position.set(1.5,0.22,0.0);root.add(lapG);
+
+  /* COFFEE MUG */
+  const cfG=new THREE.Group();
+  const cfCup=cyl(0.15,0.12,0.34,24,M.coffee);cfCup.position.y=0.17;cfG.add(cfCup);
+  const cfTop=cyl(0.138,0.138,0.04,24,M.coffeeLiq);cfTop.position.y=0.32;cfG.add(cfTop);
+  const cfHGeo=new THREE.TorusGeometry(0.075,0.02,10,20,Math.PI);
+  const cfH=new THREE.Mesh(cfHGeo,M.coffee);cfH.castShadow=true;
+  cfH.position.set(0.17,0.18,0);cfH.rotation.z=Math.PI/2;cfG.add(cfH);
+  cfG.position.set(-2.2,0.18,-0.9);root.add(cfG);
+
+  /* PLANT */
+  const plG=new THREE.Group();
+  const plPot=cyl(0.22,0.17,0.3,20,M.pot);plPot.position.y=0.15;plG.add(plPot);
+  const plSoil=cyl(0.19,0.19,0.04,20,M.soil);plSoil.position.y=0.32;plG.add(plSoil);
+  const plStem=cyl(0.022,0.028,0.62,8,M.stem);plStem.position.y=0.63;plG.add(plStem);
+  for(let i=0;i<9;i++){
+    const a=i*0.75,h=0.33+i*0.065,side=i%2===0?1:-1;
+    const lg=new THREE.SphereGeometry(0.14,8,6);lg.scale(1,0.38,0.62);
+    const lm=new THREE.Mesh(lg,M.leaf);lm.castShadow=true;
+    lm.position.set(side*0.19,h,0);lm.rotation.z=side*0.42;plG.add(lm);
+  }
+  const topLf=new THREE.SphereGeometry(0.18,8,6);topLf.scale(1,0.32,0.7);
+  const tlm=new THREE.Mesh(topLf,M.leaf);tlm.position.set(0,1.02,0);plG.add(tlm);
+  plG.position.set(-2.5,0.18,0.3);root.add(plG);
+
+  /* NOTEBOOK */
+  const nbG=new THREE.Group();
+  const nbB=box(0.84,0.06,0.64,M.notebook);nbB.position.y=0.03;nbG.add(nbB);
+  const nbC=box(0.84,0.016,0.64,new THREE.MeshStandardMaterial({color:0x0d280d,roughness:0.9}));nbC.position.y=0.069;nbG.add(nbC);
+  for(let i=0;i<5;i++){const ln=box(0.7,0.003,0.006,M.screen);ln.position.set(0,0.077,-0.22+i*0.1);nbG.add(ln)}
+  const nbRing=cyl(0.01,0.01,0.68,8,M.chrome);nbRing.position.set(-0.4,0.06,0);nbRing.rotation.z=Math.PI/2;nbG.add(nbRing);
+  nbG.position.set(-1.6,0.18,-0.82);root.add(nbG);
+
+  /* HEADPHONES */
+  const hpG=new THREE.Group();
+  const hpBand=new THREE.TorusGeometry(0.23,0.027,12,36,Math.PI);
+  const hpBm=new THREE.Mesh(hpBand,M.hp);hpBm.castShadow=true;hpBm.position.y=0.23;hpG.add(hpBm);
+  [[-0.23,0],[0.23,0]].forEach(([x])=>{
+    const cup=cyl(0.095,0.095,0.09,24,M.hp);cup.position.set(x,0.21,-0.02);cup.rotation.z=Math.PI/2;hpG.add(cup);
+    const cush=cyl(0.075,0.075,0.045,24,M.hpCush);cush.position.set(x+(x>0?.065:-.065),0.21,-0.02);cush.rotation.z=Math.PI/2;hpG.add(cush);
+  });
+  hpG.position.set(0.9,0.19,-0.9);hpG.rotation.y=0.4;root.add(hpG);
+
+  /* BOOKS */
+  const bkG=new THREE.Group();
+  [[0,0.27,0.23],[0.19,0.22,0.23],[0.36,0.25,0.23]].forEach(([x,h,d],i)=>{
+    const bk=box(0.19,h,d,M.books[i]);bk.position.set(x,h/2,0);bkG.add(bk);
+    const spine=box(0.005,h,d,new THREE.MeshStandardMaterial({color:[0xffffff,0xffaa44,0x88ff88][i],roughness:0.9,emissive:[0xffffff,0xffaa44,0x88ff88][i],emissiveIntensity:0.04}));
+    spine.position.set(x-0.094,h/2,0);bkG.add(spine);
+  });
+  bkG.position.set(1.9,0.18,0.35);root.add(bkG);
+
+  /* LAMP */
+  const lmpG=new THREE.Group();
+  const lmpBase=cyl(0.2,0.2,0.07,20,M.lamp);lmpBase.position.y=0.035;lmpG.add(lmpBase);
+  const lmpPost=box(0.045,0.72,0.045,M.lamp);lmpPost.position.set(0,0.41,0);lmpG.add(lmpPost);
+  const lmpJ=sph(0.065,M.lamp);lmpJ.position.set(0,0.79,0);lmpG.add(lmpJ);
+  const lmpArm=box(0.04,0.52,0.04,M.lamp);lmpArm.position.set(0.2,1.02,0);lmpArm.rotation.z=0.5;lmpG.add(lmpArm);
+  const lmpShade=cyl(0.24,0.13,0.26,20,M.lampHead);lmpShade.position.set(0.44,1.22,0);lmpG.add(lmpShade);
+  const lmpBulb=sph(0.05,new THREE.MeshStandardMaterial({color:0xffffee,emissive:0xffdd44,emissiveIntensity:2.0,roughness:0.1}));
+  lmpBulb.position.set(0.44,1.1,0);lmpG.add(lmpBulb);
+  lmpG.position.set(-2.8,0.18,0.8);root.add(lmpG);
+
+  /* PHONE */
+  const phG=new THREE.Group();
+  const phBody=box(0.32,0.065,0.66,M.phone);phBody.position.y=0.033;phG.add(phBody);
+  const phSc=box(0.28,0.012,0.58,M.phoneScreen);phSc.position.y=0.068;phG.add(phSc);
+  const phBtn=cyl(0.015,0.015,0.015,12,M.chrome);phBtn.position.set(0.17,0.05,-0.1);phBtn.rotation.z=Math.PI/2;phG.add(phBtn);
+  phG.position.set(2.0,0.18,-0.72);phG.rotation.y=0.32;root.add(phG);
+
+  /* KEYBOARD */
+  const kbG=new THREE.Group();
+  const kbBase=box(2.45,0.065,0.8,M.keyboard);kbBase.position.y=0.033;kbG.add(kbBase);
+  let khi=0;
+  [[11,0.17,0.15,0],[11,0.17,0.15,1],[10,0.17,0.15,2],[5,0.22,0.15,3]].forEach(([cols,kw,kd,row])=>{
+    const startX=-(cols*(kw+0.025))/2+kw/2;
+    for(let c=0;c<cols;c++){
+      const isH=khi%8===0;
+      const k=box(kw,0.045,kd,isH?M.keyHi:M.key);
+      k.position.set(startX+c*(kw+0.025),0.065,-0.27+row*(kd+0.02));
+      kbG.add(k);khi++;
+    }
+  });
+  kbG.position.set(0,0.18,-0.82);root.add(kbG);
+
+  /* MOUSE */
+  const msG=new THREE.Group();
+  const msBody=new THREE.SphereGeometry(0.15,16,12);msBody.scale(0.78,0.38,1.1);
+  const msMesh=new THREE.Mesh(msBody,M.keyboard);msMesh.castShadow=true;msG.add(msMesh);
+  const msScroll=cyl(0.02,0.02,0.06,8,M.chrome);msScroll.position.set(0,0.065,0);msG.add(msScroll);
+  msG.position.set(1.35,0.225,-0.52);root.add(msG);
+
+  /* CABLE (decorative) */
+  const cableG=new THREE.Group();
+  const pts=[];for(let i=0;i<=20;i++){const t=i/20,x=-0.5+t*1.8,y=0.19-Math.sin(t*Math.PI*2)*0.08,z=0.25;pts.push(new THREE.Vector3(x,y,z));}
+  const cablePath=new THREE.CatmullRomCurve3(pts);
+  const cableGeo=new THREE.TubeGeometry(cablePath,40,0.012,8,false);
+  const cableMesh=new THREE.Mesh(cableGeo,new THREE.MeshStandardMaterial({color:0x111120,roughness:0.8}));
+  cableMesh.castShadow=true;cableG.add(cableMesh);root.add(cableG);
+
+  /* FLOATING PARTICLES */
+  const pGeo=new THREE.BufferGeometry();
+  const pN=80,pPos=new Float32Array(pN*3);
+  for(let i=0;i<pN*3;i++)pPos[i]=(Math.random()-0.5)*9;
+  pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
+  const pMat=new THREE.PointsMaterial({color:0xc8ff00,size:0.022,transparent:true,opacity:0.3});
+  const pts2=new THREE.Points(pGeo,pMat);scene.add(pts2);
+
+  /* ---- CLICK MAP ---- */
+  const clickMap=new Map();
+  function mapGroup(g,key){g.traverse(c=>{if(c.isMesh)clickMap.set(c,key)})}
+  mapGroup(monG,'monitor');mapGroup(lapG,'laptop');mapGroup(cfG,'coffee');
+  mapGroup(plG,'plant');mapGroup(nbG,'notebook');mapGroup(hpG,'headphones');
+  mapGroup(bkG,'books');mapGroup(lmpG,'lamp');mapGroup(phG,'phone');
+  mapGroup(kbG,'keyboard');mapGroup(msG,'keyboard');
+
+  const raycaster=new THREE.Raycaster();
+  const mouse2d=new THREE.Vector2();
+
+  function getRayKey(e){
+    const r=canvas.getBoundingClientRect();
+    mouse2d.x=((e.clientX-r.left)/r.width)*2-1;
+    mouse2d.y=-((e.clientY-r.top)/r.height)*2+1;
+    raycaster.setFromCamera(mouse2d,camera);
+    const hits=raycaster.intersectObjects(root.children,true);
+    for(const h of hits){let o=h.object;while(o){if(clickMap.has(o))return clickMap.get(o);o=o.parent}};
+    return null;
+  }
+
+  canvas.addEventListener('click',e=>{const k=getRayKey(e);if(k)openModal(k)});
+  canvas.addEventListener('mousemove',e=>{
+    const k=getRayKey(e);
+    const hud=document.getElementById('hudTxt');
+    if(k){
+      hud.innerHTML=`<em>${ITEMS[k].ico} ${ITEMS[k].title}</em> — click to explore`;
+      cur.classList.add('big');
+    } else {
+      hud.innerHTML=`drag to rotate · <em>click items to explore</em>`;
+      cur.classList.remove('big');
+    }
+  });
+  canvas.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+
+  /* TOUCH */
+  canvas.addEventListener('touchend',e=>{
+    e.preventDefault();
+    const t=e.changedTouches[0];
+    const fakeE={clientX:t.clientX,clientY:t.clientY};
+    const k=getRayKey(fakeE);if(k)openModal(k);
+  },{passive:false});
+
+  /* ---- DRAG ROTATION (full 2-axis) ---- */
+  let isDrag=false,px=0,py=0;
+  const euler=new THREE.Euler(0,0,0,'YXZ');
+  const tEuler=new THREE.Euler(-0.22,0.18,0,'YXZ');
+  let autoSpin=true;
+
+  canvas.addEventListener('mousedown',e=>{isDrag=true;px=e.clientX;py=e.clientY;autoSpin=false});
+  window.addEventListener('mouseup',()=>{isDrag=false});
+  window.addEventListener('mousemove',e=>{
+    if(!isDrag)return;
+    tEuler.y+=(e.clientX-px)*0.009;
+    tEuler.x+=(e.clientY-py)*0.009;
+    tEuler.x=Math.max(-Math.PI/2.1,Math.min(Math.PI/2.1,tEuler.x));
+    px=e.clientX;py=e.clientY;
+  });
+  canvas.addEventListener('touchstart',e=>{isDrag=true;px=e.touches[0].clientX;py=e.touches[0].clientY;autoSpin=false},{passive:true});
+  window.addEventListener('touchend',()=>{isDrag=false});
+  window.addEventListener('touchmove',e=>{
+    if(!isDrag)return;
+    tEuler.y+=(e.touches[0].clientX-px)*0.011;
+    tEuler.x+=(e.touches[0].clientY-py)*0.011;
+    tEuler.x=Math.max(-Math.PI/2.1,Math.min(Math.PI/2.1,tEuler.x));
+    px=e.touches[0].clientX;py=e.touches[0].clientY;
+  },{passive:true});
+
+  /* VIEW PRESETS */
+  function setView(x,y,spin=false){tEuler.x=x;tEuler.y=y;autoSpin=spin}
+  //document.getElementById('btnTop').onclick=()=>setView(-1.35,0);
+  document.getElementById('btnFront').onclick=()=>setView(0,3.25);
+  document.getElementById('btnIso').onclick=()=>setView(-0.42,0.52);
+  document.getElementById('btnReset').onclick=()=>setView(-0.22,0.18,true);
+
+  /* THEME UPDATE */
+  function updateSceneTheme(dark){
+    const bg=dark?0x060608:0xeeeee8;
+    const fog=dark?0x060608:0xddddd4;
+    scene.background.set(bg);
+    scene.fog.color.set(fog);
+    ambient.color.set(dark?0x334455:0x9999aa);
+    ambient.intensity=dark?0.9:2.2;
+    key.intensity=dark?1.8:2.8;
+    pMat.color.set(dark?0xc8ff00:0x4a7c00);
+    renderer.toneMappingExposure=dark?1.15:1.4;
+  }
+
+  window.addEventListener('resize',()=>{setSize();});
+
+  /* ANIMATE */
+  let t=0;
+  (function animate(){
+    requestAnimationFrame(animate);
+    t+=0.016;
+    if(autoSpin)tEuler.y+=0.003;
+    euler.x+=(tEuler.x-euler.x)*0.07;
+    euler.y+=(tEuler.y-euler.y)*0.07;
+    root.rotation.x=euler.x;root.rotation.y=euler.y;
+
+    /* particles drift up */
+    const pp=pts2.geometry.attributes.position;
+    for(let i=0;i<pN;i++){pp.array[i*3+1]+=0.0035;if(pp.array[i*3+1]>4.5)pp.array[i*3+1]=-4.5}
+    pp.needsUpdate=true;pts2.rotation.y+=0.0004;
+
+    /* pulsing glow */
+    monGlow.intensity=0.55+Math.sin(t*1.9)*0.18;
+    lampGlow.intensity=0.75+Math.sin(t*0.8)*0.22;
+    phoneGlow.intensity=0.25+Math.sin(t*2.4)*0.1;
+    M.screen.emissiveIntensity=0.1+Math.sin(t*1.8)*0.04;
+    lmpBulb.material.emissiveIntensity=1.8+Math.sin(t*1.1)*0.4;
+
+    renderer.render(scene,camera);
+  })();
+})();
+</script>
+</body>
 </html>
